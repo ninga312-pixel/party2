@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어머니 칠순 잔치 초대장</title>
+  
+  <meta property="og:title" content="어머니 칠순 잔치에 초대합니다">
+  <meta property="og:description" content="2026년 7월 25일 (토) 12:00 | 서울 종로구 삼청로 4">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f4f2ef;
+      color: #4a4a4a;
+      line-height: 1.6;
+      padding: 20px 10px;
+    }
+    .card {
+      max-width: 450px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .header { font-family: 'Nanum Myeongjo', serif; font-size: 24px; margin-bottom: 30px; color: #8b7355; }
+    
+    /* 사진 영역 스타일 수정 */
+    .hero-img { width: 100%; border-radius: 10px; margin-bottom: 30px; overflow: hidden; }
+    .hero-img img { width: 100%; display: block; object-fit: cover; }
+    
+    .message { margin-bottom: 40px; font-size: 16px; color: #555; }
+    .info-section { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 30px 0; margin-bottom: 30px; }
+    .info-row { margin-bottom: 15px; }
+    .info-row b { display: block; color: #8b7355; font-size: 14px; margin-bottom: 5px; }
+    
+    /* 지도 및 버튼 스타일 추가 */
+    .map-container { margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; }
+    .map-container iframe { width: 100%; height: 250px; border: none; display: block; }
+    .btn-naver { display: block; background: #03c75a; color: white; text-decoration: none; padding: 14px; border-radius: 8px; margin-top: 10px; font-weight: bold; font-size: 15px; }
+    
+    .parking-box { background: #f9f9f9; padding: 15px; border-radius: 10px; font-size: 14px; text-align: left; }
+    .closing { font-family: 'Nanum Myeongjo', serif; font-size: 17px; color: #8b7355; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">어머니 칠순을 축하합니다</div>
+  
+  <div class="hero-img">
+    <img src="mom.jpg" alt="어머니 사진">
+  </div>
+
+  <div class="message">
+    저희 어머니의 칠순을 맞아<br>
+    가족과 일가친척분들을 모시고<br>
+    식사 자리를 가지려고 합니다.<br><br>
+    귀한 시간 내어주셔서<br>
+    함께 축하해 주시면 감사하겠습니다.
+  </div>
+
+  <div class="info-section">
+    <div class="info-row">
+      <b>일시</b>
+      2026년 7월 25일 (토) 12:00
+    </div>
+    <div class="info-row">
+      <b>장소</b>
+      서울 종로구 삼청로 4, 4층
+    </div>
+    
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=서울 종로구 삼청로 4&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+    </div>
+    
+    <a href="https://map.naver.com/p/search/서울%20종로구%20삼청로%204" target="_blank" class="btn-naver">
+      📍 네이버 지도에서 길찾기
+    </a>
+  </div>
+
+  <div class="parking-box">
+    <b>🚗 주차 안내</b><br>
+    서울 종로구 율곡로 6<br>
+    아마노 트윈트리타워 주차장을 이용해 주십시오.
+  </div>
+
+  <div class="closing">
+    기쁜 마음으로 기다리겠습니다.<br>
+    감사합니다!
+  </div>
+</div>
+
+</body>
+</html>
