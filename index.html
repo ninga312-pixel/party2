@@ -1,101 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>어머니 칠순 잔치 초대장</title>
-  
-  <meta property="og:title" content="어머니 칠순 잔치에 초대합니다">
-  <meta property="og:description" content="2026년 7월 25일 (토) 12:00 | 서울 종로구 삼청로 4">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <title>기념일 초대장</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-  
+  <!-- 카카오톡/카카오스토리/네이버 등에 보이는 미리보기 설정 (OG 태그) -->
+  <meta property="og:title" content="김원주님 고희연 초대장" />
+  <meta property="og:description" content="2020년 6월 24일 오후 1시 30분, 양재 엘타워 디오홀에서 뵙겠습니다." />
+  <meta property="og:type" content="website" />
+  <!-- 공개 이미지 주소(예: 서버나 GitHub에 올린 대표사진)로 변경 -->
+  <meta property="og:image" content="https://example.com/images/main.jpg" />
+  <!-- 실제 초대장 주소로 변경 -->
+  <meta property="og:url" content="https://example.com/invitation/index.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: #f4f2ef;
-      color: #4a4a4a;
-      line-height: 1.6;
-      padding: 20px 10px;
+      font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:#f5f1eb;
+      color:#333;
     }
-    .card {
-      max-width: 450px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      text-align: center;
+    .wrap {
+      max-width:420px;
+      margin:0 auto;
+      background:#fff;
+      padding-bottom:40px;
     }
-    .header { font-family: 'Nanum Myeongjo', serif; font-size: 24px; margin-bottom: 30px; color: #8b7355; }
-    
-    /* 사진 영역 스타일 수정 */
-    .hero-img { width: 100%; border-radius: 10px; margin-bottom: 30px; overflow: hidden; }
-    .hero-img img { width: 100%; display: block; object-fit: cover; }
-    
-    .message { margin-bottom: 40px; font-size: 16px; color: #555; }
-    .info-section { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 30px 0; margin-bottom: 30px; }
-    .info-row { margin-bottom: 15px; }
-    .info-row b { display: block; color: #8b7355; font-size: 14px; margin-bottom: 5px; }
-    
-    /* 지도 및 버튼 스타일 추가 */
-    .map-container { margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; }
-    .map-container iframe { width: 100%; height: 250px; border: none; display: block; }
-    .btn-naver { display: block; background: #03c75a; color: white; text-decoration: none; padding: 14px; border-radius: 8px; margin-top: 10px; font-weight: bold; font-size: 15px; }
-    
-    .parking-box { background: #f9f9f9; padding: 15px; border-radius: 10px; font-size: 14px; text-align: left; }
-    .closing { font-family: 'Nanum Myeongjo', serif; font-size: 17px; color: #8b7355; margin-top: 30px; }
+    .section {
+      padding:24px 20px;
+    }
+    .section + .section {
+      border-top:1px solid #eee;
+    }
+    .title-center {
+      text-align:center;
+      font-size:20px;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+    .sub-text {
+      text-align:center;
+      font-size:14px;
+      color:#666;
+    }
+    .calendar {
+      margin-top:16px;
+      background:#f9f3ee;
+      padding:16px;
+      border-radius:8px;
+    }
+    .calendar-header {
+      text-align:center;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .calendar-grid {
+      display:grid;
+      grid-template-columns:repeat(7, 1fr);
+      text-align:center;
+      font-size:12px;
+      row-gap:6px;
+    }
+    .calendar-grid span {
+      padding:4px 0;
+    }
+    .calendar-grid .day-name {
+      font-weight:600;
+      color:#999;
+    }
+    .calendar-grid .selected {
+      background:#ff6b6b;
+      color:#fff;
+      border-radius:999px;
+    }
+
+    .section-title {
+      font-family:"Nanum Pen Script", cursive;
+      font-size:22px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .photo-main {
+      width:100%;
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .photo-main img {
+      width:100%;
+      display:block;
+    }
+    .photo-grid {
+      margin-top:8px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:4px;
+    }
+    .photo-grid img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:4px;
+    }
+
+    .intro-card {
+      text-align:center;
+      padding:24px 16px;
+      background:#fdf2e6;
+      border-radius:8px;
+      line-height:1.6;
+    }
+
+    .movie-wrapper {
+      position:relative;
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .movie-wrapper iframe,
+    .movie-wrapper video {
+      width:100%;
+      height:220px;
+      display:block;
+    }
+
+    .location-name {
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+    .location-address {
+      font-size:14px;
+      color:#555;
+      line-height:1.5;
+    }
+
+    .map {
+      margin-top:12px;
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .map iframe {
+      width:100%;
+      height:220px;
+      border:0;
+    }
+
+    .transport {
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.7;
+    }
+    .transport b {
+      display:inline-block;
+      margin-top:6px;
+    }
+
+    .footer {
+      text-align:center;
+      font-size:13px;
+      color:#777;
+      margin-top:10px;
+    }
   </style>
 </head>
 <body>
+  <div class="wrap">
 
-<div class="card">
-  <div class="header">어머니 칠순을 축하합니다</div>
-  
-  <div class="hero-img">
-    <img src="mom.jpg" alt="어머니 사진">
+    <!-- D-day / 캘린더 -->
+    <section class="section">
+      <div class="title-center">D-22</div>
+      <div class="sub-text">2020년 6월 24일 수요일</div>
+
+      <div class="calendar">
+        <div class="calendar-header">2020년 6월</div>
+        <div class="calendar-grid">
+          <!-- 요일 -->
+          <span class="day-name">S</span>
+          <span class="day-name">M</span>
+          <span class="day-name">T</span>
+          <span class="day-name">W</span>
+          <span class="day-name">T</span>
+          <span class="day-name">F</span>
+          <span class="day-name">S</span>
+          <!-- 날짜 (간단 예시 – 실제 달력 형태는 직접 맞춰 수정) -->
+          <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+          <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+          <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+          <span>21</span><span>22</span><span>23</span><span class="selected">24</span><span>25</span><span>26</span><span>27</span>
+          <span>28</span><span>29</span><span>30</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section">
+      <div class="section-title">Photo Gallery</div>
+      <div class="photo-main">
+        <img src="images/main.jpg" alt="기념 사진" />
+      </div>
+      <div class="photo-grid">
+        <img src="images/thumb1.jpg" alt="">
+        <img src="images/thumb2.jpg" alt="">
+        <img src="images/thumb3.jpg" alt="">
+      </div>
+    </section>
+
+    <!-- Movie -->
+    <section class="section">
+      <div class="section-title">Movie</div>
+      <div class="movie-wrapper">
+        <!-- 유튜브 영상 사용 예시: embed 주소로 변경 -->
+        <iframe src="https://www.youtube.com/embed/영상ID" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Location / Map -->
+    <section class="section">
+      <div class="section-title">Location</div>
+
+      <div class="location-name">양재 엘타워 디오홀</div>
+      <div class="location-address">
+        서울 서초구 강남대로 213<br />
+        (양재동 24-1)
+      </div>
+
+      <div class="map">
+        <!-- 네이버/카카오 지도 iframe 코드 붙여넣기 -->
+        <!-- 예시는 Google 지도 임베드 -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=지도_임베드코드_여기로"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="transport">
+        <b>BUS</b><br />
+        간선버스: 133, 121, 1112<br />
+        지선버스: 12, 14, 131<br />
+        <b>지하철</b><br />
+        3호선 양재역 3번 출구 도보 5분
+      </div>
+    </section>
+
+    <!-- 메인 초대 문구 -->
+    <section class="section">
+      <div class="section-title">Anniversary</div>
+      <div class="intro-card">
+        김원주님의 고희연에 초대합니다.<br /><br />
+        2020년 6월 24일(수) 오후 1시 30분<br />
+        양재 엘타워 디오홀
+      </div>
+      <div class="footer">
+        참석 여부를 문자나 전화로 알려주시면 감사하겠습니다.
+      </div>
+    </section>
+
   </div>
-
-  <div class="message">
-    저희 어머니의 칠순을 맞아<br>
-    가족과 일가친척분들을 모시고<br>
-    식사 자리를 가지려고 합니다.<br><br>
-    귀한 시간 내어주셔서<br>
-    함께 축하해 주시면 감사하겠습니다.
-  </div>
-
-  <div class="info-section">
-    <div class="info-row">
-      <b>일시</b>
-      2026년 7월 25일 (토) 12:00
-    </div>
-    <div class="info-row">
-      <b>장소</b>
-      서울 종로구 삼청로 4, 4층
-    </div>
-    
-    <div class="map-container">
-      <iframe src="https://maps.google.com/maps?q=서울 종로구 삼청로 4&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
-    </div>
-    
-    <a href="https://map.naver.com/p/search/서울%20종로구%20삼청로%204" target="_blank" class="btn-naver">
-      📍 네이버 지도에서 길찾기
-    </a>
-  </div>
-
-  <div class="parking-box">
-    <b>🚗 주차 안내</b><br>
-    서울 종로구 율곡로 6<br>
-    아마노 트윈트리타워 주차장을 이용해 주십시오.
-  </div>
-
-  <div class="closing">
-    기쁜 마음으로 기다리겠습니다.<br>
-    감사합니다!
-  </div>
-</div>
-
 </body>
 </html>
